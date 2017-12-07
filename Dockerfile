@@ -1,4 +1,4 @@
-# Dockerfile, watson-intu/Self build using raspbian (arm64)
+# Dockerfile, watson-intu/Self build for Jetson TX2 (aarch64), using debian:jessie
 # Usage: 
 #   docker build -f Dockerfile -t openhorizon/cogwerx-aarch64-tx2-self:<version> .    # (standard full size container)
 #   docker build --squash -f Dockerfile -t openhorizon/cogwerx-aarch64-tx2-self:<version> --build-arg mode="dev" .  # (slim container)
@@ -58,7 +58,7 @@ RUN /bin/bash -c "if [ 'x$mode' != 'dev' ] ; then apt-get -y autoremove; fi"
 
 
 ##############
-## Configure Self with your own creds:
+## Configure and run Self with your own creds:
 # cd <self config dir>
 # copy in bootstrap.json file
 # Run self:
